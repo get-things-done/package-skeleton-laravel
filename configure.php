@@ -73,7 +73,7 @@ $authorUsername = ask('Author username', $usernameGuess);
 
 $vendorName = ask('Vendor name', $authorUsername);
 $vendorSlug = slugify($vendorName);
-$vendorNamespace = ucwords($vendorName);
+$vendorNamespace = str_replace(' ', '', ucwords(str_replace('-', ' ', $vendorName)));
 $vendorNamespace = ask('Vendor namespace', $vendorNamespace);
 
 $currentDirectory = getcwd();
