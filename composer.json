@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "get-things-done/package-skeleton-laravel",
+    "description": "This is my package package-skeleton-laravel",
     "keywords": [
-        ":vendor_name",
+        "get-things-done",
         "laravel",
-        ":package_slug"
+        "package-skeleton-laravel"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/get-things-done/package-skeleton-laravel",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Cao Minh Duc",
+            "email": "caominhduc31081@gmail.com",
             "role": "Developer"
         }
     ],
@@ -30,19 +30,22 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "GetThingsDone\\PackageSkeletonLaravel\\": "src",
+            "GetThingsDone\\PackageSkeletonLaravel\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "GetThingsDone\\PackageSkeletonLaravel\\Tests\\": "tests"
         }
     },
     "scripts": {
         "psalm": "vendor/bin/psalm",
         "test": "./vendor/bin/testbench package:test --parallel --no-coverage",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+        "test-coverage": [
+            "@putenv XDEBUG_MODE=coverage",
+            "vendor/bin/phpunit --coverage-html coverage"
+        ]
     },
     "config": {
         "sort-packages": true
@@ -50,10 +53,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "GetThingsDone\\PackageSkeletonLaravel\\PackageSkeletonLaravelServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\SkeletonFacade"
+                "PackageSkeletonLaravel": "GetThingsDone\\PackageSkeletonLaravel\\PackageSkeletonLaravelFacade"
             }
         }
     },
